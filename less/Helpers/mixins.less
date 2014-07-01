@@ -1,0 +1,78 @@
+.transition(@type)
+{
+  -webkit-transition: @type;  /* Chrome 1-25, Safari 3.2+ */
+     -moz-transition: @type;  /* Firefox 4-15 */
+       -o-transition: @type;  /* Opera 10.50–12.00 */
+	  -ms-transition: @type;  /* IE8, 2d */
+          transition: @type;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+}
+
+.border-radius(@size)
+{
+  -webkit-border-radius: @size;
+     -moz-border-radius: @size;
+          border-radius: @size;
+		background-clip: padding-box;
+}
+
+.opacity(@factor)
+{
+    opacity: @factor;
+    @iefactor: @factor*100;
+    filter: alpha(opacity=@iefactor);
+}
+
+.box-shadow(@args)
+{
+    -webkit-box-shadow: @args;
+    -moz-box-shadow: @args;
+    box-shadow: @args;
+}
+
+.inner-shadow(@args)
+{
+    .box-shadow(inset @args);
+}
+
+.box-sizing(@args)
+{
+    -webkit-box-sizing: @args;
+    -moz-box-sizing: @args;
+    box-sizing: @args;
+}
+
+.border-box()
+{
+    .box-sizing(border-box);
+}
+
+.content-box()
+{
+    .box-sizing(content-box);
+}
+
+.gradient(@default: #F5F5F5, @start: #EEE, @stop: #FFF)
+{
+    .linear-gradient-top(@default,@start,0%,@stop,100%);
+}
+
+.linear-gradient-top(@default,@color1,@stop1,@color2,@stop2)
+{
+    background-color: @default;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(@stop1, @color1), color-stop(@stop2 @color2));
+    background-image: -webkit-linear-gradient(top, @color1 @stop1, @color2 @stop2);
+    background-image: -moz-linear-gradient(top, @color1 @stop1, @color2 @stop2);
+    background-image: -ms-linear-gradient(top, @color1 @stop1, @color2 @stop2);
+    background-image: -o-linear-gradient(top, @color1 @stop1, @color2 @stop2);
+    background-image: linear-gradient(top, @color1 @stop1, @color2 @stop2);
+}
+
+.no-select()
+{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: -moz-none;
+	-ms-user-select: none;
+	user-select: none;
+}
