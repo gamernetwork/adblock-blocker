@@ -27,9 +27,9 @@
 						
 						<pre id="log"></pre>
 											
-						<div id="leader" class="advert leaderboard" data-ad-zone="488833"></div>
-						<div id="mpu" class="advert mpu" data-ad-zone="488835"></div>
-						<div id="halfpage" class="advert halfpage" data-ad-zone="490476"></div>
+						<div id="leader" class="advert leaderboard" data-ad-zone="488833" data-ghost-zone="3"></div>
+						<div id="mpu" class="advert mpu" data-ad-zone="488835" data-ghost-zone="1"></div>
+						<div id="halfpage" class="advert halfpage" data-ad-zone="490476" data-ghost-zone="5"></div>
 						
 					</section>
 				</article>
@@ -42,8 +42,9 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript">var jQuery = jQuery.noConflict();</script>
 	
-	<script src="http://www.modojo.com/static/scripts/postscribe.js?version=1.2"></script>
-	<script src="http://www.modojo.com/static/scripts/openxJSON.js?version=1.2"></script>
+	<script src="scripts/htmlParser.js"></script>
+	<script src="scripts/postscribe.js"></script>
+	<script src="scripts/openxJSON.js"></script>
 
 	<script type="text/javascript">
 		jQuery('document').ready(function()

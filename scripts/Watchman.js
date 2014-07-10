@@ -27,28 +27,22 @@ var Watchman = Class.create({
 
 			// Switch
 			l("Switching to alternative ad server");
-			
-			for(i = 0; i < this.blocked.length; i++)
-			{
-				var b = this.blocked[i];
-				var w = parseInt(b.getStyle("width"));
-				var h = parseInt(b.getStyle("height"));
 
-				// this is the endpoint for the alternate ad server
-				var u = "alternate.php?w="+w+"&h="+h
-				
-				// Create a replacement iframe				
-				var r = new Element("iframe");
-				r.width = w;
-				r.height = h;
-				r.className = b.className;
-				r.src = u;
-								
-				l("Replaced #" + b.identify() + " with " + w + "x" + h + " iframe:" + u);
-				
-				// Swap out advert with iframe				
-				new Element.replace(this.blocked[i], r);
-			}
+            jQuery.getScript( "http://ghost.gamer-network.net/www/delivery/spc.php?zones=1|2|3|4|5|6&r=" + Math.floor(Math.random()*99999999), jQuery.proxy( function() {
+                for(i = 0; i < this.blocked.length; i++) {
+
+                    var b = this.blocked[i];
+                    var w = parseInt(b.getStyle("width"));
+                    var h = parseInt(b.getStyle("height"));
+
+                    l("Replaced #" + b.identify() + " with " + w + "x" + h);
+                    
+                    // Swap out advert with iframe				
+                    b.innerHTML = OA_output[ jQuery(b).attr('data-ghost-zone') ];
+                }
+            }, this ) );
+                        
+			
 		}
 		else
 		{
